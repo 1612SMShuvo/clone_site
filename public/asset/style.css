@@ -110,7 +110,9 @@
             position: absolute;
             right: 50px;
         }
-        
+        .all-button{
+          width: 178px;
+        }
         .header-right-text img{
             width: 23px;
             /* background-color: rgb(255, 255, 255); */

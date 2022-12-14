@@ -26,13 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $records = Record::paginate(20);
+        $records = Record::paginate(2);
         return view('admin.home',compact('records'));
     }
     public function create()
     {
-        $captcha = captcha_img('flat');
-        return view('admin.add_record', $captcha);
+        return view('admin.add_record');
     }
     public function refreshCaptcha()
     {

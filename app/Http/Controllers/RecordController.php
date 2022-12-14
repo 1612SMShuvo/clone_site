@@ -40,7 +40,7 @@ class RecordController extends Controller
         $request->validate([
             'sure_name'   => 'required',
             'name'   => 'required',
-            'tracking_id'   => 'required|numeric|unique:records',
+            'tracking_id'   => 'required|unique:records',
             'dob'   => 'required',
             'progress'   => 'required|numeric',
             'birth_place'   => 'required',
@@ -83,7 +83,7 @@ class RecordController extends Controller
             $record->solicitor_name = $request->solicitor_name;
             $record->purpose = $request->purpose;
             $record->save();
-            return Redirect::back()->withErrors(['Record Added Successfully...!!!']);
+            return Redirect::back()->with('message','Record Added Successfully...!!!');
         } catch (\Exception $th) {
             \Log::error($th->getMessage());
             return Redirect::back()->withErrors(['Record Cannot be Added...!!!'],$th);
@@ -150,7 +150,8 @@ class RecordController extends Controller
             $record->solicitor_name = $request->solicitor_name;
             $record->purpose = $request->purpose;
             $record->save();
-            return Redirect::back()->withErrors(['Record Updated Successfully...!!!']);
+
+            return Redirect::back()->with('message','Record Updated Successfully...!!!');
         } catch (\Exception $th) {
             \Log::error($th->getMessage());
             return Redirect::back()->withErrors(['Record Cannot be Updated...!!!'],$th);
@@ -166,6 +167,6 @@ class RecordController extends Controller
     public function destroy($id)
     {
         $record = Record::where('id',$id)->delete();
-        return Redirect::back()->withErrors(['Record Deleted Successfully...!!!']);
+        return Redirect::back()->with('message','Record Deleted Successfully...!!!');
     }
 }

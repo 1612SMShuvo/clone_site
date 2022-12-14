@@ -26,7 +26,12 @@
                 </div>
             </center>
             <div class="form_part form-group">
-                <a href="{{ route('add-record') }}"><button class="btn btn-success mb-2">Add Record</button></a>
+                <a href="{{ route('add-record') }}"><button class="all-button btn btn-success mb-2">Add Record</button></a>
+                @if(session()->has('message'))
+                    <div class="alert alert-success mt-3">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -98,4 +103,5 @@
                     display: none;
                 }
             </style>
+            
 @endsection

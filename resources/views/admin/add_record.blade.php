@@ -39,6 +39,11 @@
                         </ul>
                     </div>
                 @endif
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                 <form class="form-group" action="{{ route('store-record') }}" method="POST">
                     @csrf
                    <div class="row">
@@ -137,11 +142,12 @@
                     <br>
                     <center>
                         <div class="row">
-                            <div class="col-4">
-                                <input type="submit" class="btn btn-primary" value="Save">
+                            <div class="col-6">
+                                <input type="submit" class="all-button btn btn-primary" value="Save">
+                                <a href="{{ route('home') }}"><button type="button" class="all-button btn btn-warning">Back</button></a>
                             </div>
                             <div class="col-2"></div>
-                            <div class="col-4"><a href="{{ route('home') }}"><button type="button" class="btn btn-warning">Back</button></a></div>
+                            <div class="col-4"></div>
                         </div>
                     </center>
                 </form>

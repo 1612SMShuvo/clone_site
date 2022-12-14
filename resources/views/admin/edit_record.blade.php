@@ -39,6 +39,11 @@
                         </ul>
                     </div>
                 @endif
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                 <form class="form-group" action="{{ route('edit-record',$record->id) }}" method="POST">
                     @csrf
                    <div class="row">
@@ -86,7 +91,7 @@
                            <label for="pass">Birth ID Number</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="birth_id"  value="{{ $record->birth_id }}"  id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="number" name="birth_id"  value="{{ $record->birth_id }}"  id="pass" placeholder="Enter Your Passport Number" required="required">
                        </div>
                    </div>
                   <div class="row">
@@ -137,11 +142,12 @@
                     <br>
                     <center>
                         <div class="row">
-                            <div class="col-4">
-                                <input type="submit" class="btn btn-primary" value="Update">
+                            <div class="col-6">
+                                <input type="submit" class="all-button btn btn-primary" value="Update">
+                                <a href="{{ route('home') }}"><button type="button" class="all-button btn btn-warning">Back</button></a>
                             </div>
                             <div class="col-2"></div>
-                            <div class="col-4"><a href="{{ route('home') }}"><button type="button" class="btn btn-warning">Back</button></a></div>
+                            <div class="col-4"></div>
                         </div>
                     </center>
                 </form>
