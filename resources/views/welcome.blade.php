@@ -30,6 +30,10 @@
                 margin-top: 25px;
                 margin-left: 75px;
             }
+            .logo img{
+                width: auto;
+                height: 130px;
+            }
             .track_button {
                 float: right;
                 margin-top: 25px;
@@ -73,7 +77,7 @@
                 <a href="{{url('/track-application')}}" class="btn btn-primary">Track your application</a>
             </div>
             <div class="logo">
-                <h2>Your Logo</h2>
+                <img src="{{ asset('asset/img/logo-front.png') }}">
             </div>
         </div>
 

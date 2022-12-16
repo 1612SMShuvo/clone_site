@@ -51,14 +51,14 @@
 								<div class="col-6">
 									<input class="form-control" type="date" name="dob" id="pass" placeholder="Enter Your Birth Date" required="required">
 								</div>
-								<div class="col-6">
+								{{-- <div class="col-6">
 									<div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
 										<label for="password" class="col-md-4 control-label">Captcha</label>
 				  
 				  
-										{{-- <div class="col-md-6">
+										<div class="col-md-6">
 											<div class="captcha">
-											<span>{{HTML::image(Mews\Captcha\Captcha::img(), 'Captcha image')}}</span>
+											<span>{{Mews\Captcha\Captcha::img(), 'Captcha image'}}</span>
 											<button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
 											</div>
 											<input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
@@ -69,9 +69,9 @@
 													<strong>{{ $errors->first('captcha') }}</strong>
 												</span>
 											@endif
-										</div> --}}
+										</div>
 									</div>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 						<div class="col-4"></div>
@@ -128,7 +128,7 @@
 					</tr>
 					@else
 					<tr>
-						<h5>There Is No Data To Show..!!!</h5>
+						<td colspan="10"><h5 style="text-align: center; color:red;">There Is No Data To Show..!!!</h5></td>
 					</tr>
 					@endif
 				</tbody>

@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/track-application', function () {
-    return view('track.form');
-});
+Route::get('/track-application',[App\Http\Controllers\HomeController::class, 'track_form']);
 
 Auth::routes(['register' => false]);
 

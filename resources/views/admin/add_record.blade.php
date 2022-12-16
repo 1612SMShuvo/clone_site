@@ -51,15 +51,15 @@
                             <label for="nm">Name:</label>
                        </div>                   
                        <div class="col-3">
-                            <input class="form-control" type="text" name="sure_name" id="nm" required="required" placeholder="Enter Your Sur Name">
+                            <input class="form-control" type="text" name="sure_name" id="nm" value="{{ old('sure_name') }}" required="required" placeholder="Enter Your Sur Name">
                             <span>Give Sur Name</span>
                        </div>                   
                        <div class="col-3">
-                            <input class="form-control" type="text" name="name" id="nm" placeholder="Enter Name" required="required">
+                            <input class="form-control" type="text" name="name" id="nm" placeholder="Enter Name"  value="{{ old('name') }}"  required="required">
                             <span>Give Name</span>
                         </div>                   
                        <div class="col-3">
-                            <input class="form-control" type="text" name="tracking_id" id="traking" placeholder="Enter Your Traking ID" required="required">
+                            <input class="form-control" type="text" name="tracking_id" id="traking" value="{{ old('tracking_id') }}"  placeholder="Enter Your Traking ID" required="required">
                             <span>Give Tracking ID</span>
                        </div>
                    </div>
@@ -69,14 +69,14 @@
                             <label for="birth">Date of Birth</label>
                        </div>
                        <div class="col-3">
-                            <input class="form-control" type="date" name="dob" id="birth" required="required">
+                            <input class="form-control" type="date" name="dob" id="birth" required="required"  value="{{ old('dob') }}" >
                            <span>MM-DD-YY</span>
                        </div> 
                        <div class="col-3">
                             <label for="birth">Progress (%)</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="progress" id="place" placeholder="Enter Progress In Percent Value" required="required">
+                           <input class="form-control" type="text" name="progress" id="place" value="{{ old('progress') }}"  placeholder="Enter Progress In Percent Value" required="required">
                         </div>
                    </div>
                     <br>
@@ -85,13 +85,13 @@
                            <label for="place">Birth Place</label>
                         </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="birth_place" id="place" placeholder="Enter Your Birth place" required="required">
+                           <input class="form-control" type="text" name="birth_place" id="place" value="{{ old('birth_place') }}"  placeholder="Enter Your Birth place" required="required">
                        </div>
                        <div class="col-3">
                            <label for="pass">Birth ID Number</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="birth_id" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="text" name="birth_id" id="pass" value="{{ old('birth_id') }}"  placeholder="Enter Your Passport Number" required="required">
                        </div>
                    </div>
                   <div class="row">
@@ -99,13 +99,13 @@
                            <label for="pass">Passport Number</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="passport_no" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="text" name="passport_no" id="pass" value="{{ old('passport_no') }}"  placeholder="Enter Your Passport Number" required="required">
                        </div>
                        <div class="col-3">
                            <label for="pass">Passport Issue Date</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="date" name="passport_issue_date" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="date" name="passport_issue_date" id="pass" value="{{ old('passport_issue_date') }}"  placeholder="Enter Your Passport Number" required="required">
                            <span>MM-DD-YY</span>
                        </div>
                   </div>
@@ -115,13 +115,13 @@
                            <label for="pass">Father's Name</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="father_name" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="text" name="father_name" id="pass" value="{{ old('father_name') }}"  placeholder="Enter Your Passport Number" required="required">
                        </div>
                        <div class="col-3">
                            <label for="pass">Mother's Name</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="mother_name" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="text" name="mother_name" id="pass" value="{{ old('mother_name') }}"  placeholder="Enter Your Passport Number" required="required">
                        </div>
                    </div>
                    <br>
@@ -130,13 +130,13 @@
                            <label for="pass">Solicitor's Name</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="solicitor_name" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="text" name="solicitor_name" id="pass" value="{{ old('solicitor_name') }}"  placeholder="Enter Your Passport Number" required="required">
                        </div>
                        <div class="col-3">
                            <label for="pass">Purpose</label>
                        </div>
                        <div class="col-3">
-                           <input class="form-control" type="text" name="purpose" id="pass" placeholder="Enter Your Passport Number" required="required">
+                           <input class="form-control" type="text" name="purpose" id="pass" value="{{ old('purpose') }}"  placeholder="Enter Your Passport Number" required="required">
                        </div>
                    </div>
                     <br>

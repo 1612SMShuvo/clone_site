@@ -37,4 +37,9 @@ class HomeController extends Controller
     {
         return response()->json(['captcha'=> captcha_img()]);
     }
+
+    public function track_form()
+    {
+        return view('track.form');
+    }
 }
