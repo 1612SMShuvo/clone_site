@@ -51,27 +51,22 @@
 								<div class="col-6">
 									<input class="form-control" type="date" name="dob" id="pass" placeholder="Enter Your Birth Date" required="required">
 								</div>
-								{{-- <div class="col-6">
-									<div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
-										<label for="password" class="col-md-4 control-label">Captcha</label>
-				  
-				  
+								<div class="col-6">
+									<div class="form-group{{ $errors->has('CaptchaCode') ? ' has-error' : '' }}">
+										<label class="col-md-4 control-label">Captcha</label>
 										<div class="col-md-6">
-											<div class="captcha">
-											<span>{{Mews\Captcha\Captcha::img(), 'Captcha image'}}</span>
-											<button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
-											</div>
-											<input id="captcha" type="text" class="form-control" placeholder="Enter Captcha" name="captcha">
-				  
-				  
-											@if ($errors->has('captcha'))
+											{!! captcha_image_html('ContactCaptcha') !!}
+											<input class="form-control" type="text" id="CaptchaCode" name="CaptchaCode" style="margin-top:5px;">
+
+
+											@if ($errors->has('CaptchaCode'))
 												<span class="help-block">
-													<strong>{{ $errors->first('captcha') }}</strong>
+													<strong>{{ $errors->first('CaptchaCode') }}</strong>
 												</span>
 											@endif
 										</div>
 									</div>
-								</div> --}}
+								</div>
 							</div>
 						</div>
 						<div class="col-4"></div>

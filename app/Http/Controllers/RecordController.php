@@ -55,11 +55,11 @@ class RecordController extends Controller
         [
             'sure_name'   => 'Sure Name Is Required',
             'name'   => 'Name Is Required',
-            'tracking_id'   => 'Tracking ID Is Required, Should Be Unique And Numeric Type',
+            'tracking_id'   => 'Tracking ID Is Required, Should Be Unique',
             'dob'   => 'Date of Birth Is Required',
             'progress'   => 'Progress Is Required',
             'birth_place'   => 'Birth Place Is Required',
-            'birth_id'   => 'Birth ID Is Required',
+            'birth_id'   => 'Birth ID Is Required, Should Be Unique, Number Type',
             'passport_no'   => 'Passport No. Is Required',
             'passport_issue_date'   => 'Passport Issue Date Is Required',
             'father_name'   => 'Father Name Is Required',
@@ -103,12 +103,9 @@ class RecordController extends Controller
 
     public function search_show(Request $request)
     {
-        // $request->validate([
-        //     'captcha' => 'required|captcha'
-        // ],
-        // [
-        //     'captcha.captcha' => 'Retry . Make Sure You Are Not a Robot.'
-        // ]);
+        $this->validate($request, [
+            'CaptchaCode' => 'required|valid_captcha'
+        ]);
         $record = Record::where('dob',$request->dob)->where('tracking_id',$request->tracking_id)->first();
         return view('track.form',compact('record'));
     }
