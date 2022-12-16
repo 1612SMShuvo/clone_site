@@ -81,7 +81,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                  @if ($records->lastPage() > 0)
+                  @if ($records->lastPage() > 1)
                     <ul class="pagination">
                         <li class="{{ ($records->currentPage() == 1) ? ' disabled' : '' }}">
                             <a href="{{ $records->url(1) }}">Previous</a>
