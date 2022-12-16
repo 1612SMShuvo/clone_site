@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $records = Record::paginate(2);
+        $records = Record::paginate(10);
         return view('admin.home',compact('records'));
     }
     public function create()
