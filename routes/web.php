@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/track-application',[App\Http\Controllers\HomeController::class, 'track_form']);
+Route::get('/track-application',function () {
+    return view('track.form');
+});
 
 Auth::routes(['register' => false]);
 
@@ -29,6 +31,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/store-record', [App\Http\Controllers\RecordController::class, 'store'])->name('store-record');
     Route::get('/edit-record/{id}', [App\Http\Controllers\RecordController::class, 'edit'])->name('edit-record');
     Route::post('/edit-record/{id}', [App\Http\Controllers\RecordController::class, 'update'])->name('update-record');
-    Route::get('/remove-record/{id}', [App\Http\Controllers\RecordController::class, 'destroy'])->name('remove-record');
+    Route::get('/remove-record', [App\Http\Controllers\RecordController::class, 'destroy'])->name('remove-record');
 });
 

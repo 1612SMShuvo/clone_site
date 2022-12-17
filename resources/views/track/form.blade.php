@@ -51,7 +51,7 @@
 								<div class="col-6">
 									<input class="form-control" type="date" name="dob" id="pass" placeholder="Enter Your Birth Date" required="required">
 								</div>
-								<div class="col-6">
+								{{-- <div class="col-6">
 									<div class="form-group{{ $errors->has('CaptchaCode') ? ' has-error' : '' }}">
 										<label class="col-md-4 control-label">Captcha</label>
 										<div class="col-md-6">
@@ -66,7 +66,7 @@
 											@endif
 										</div>
 									</div>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 						<div class="col-4"></div>
@@ -80,7 +80,7 @@
 							</select>
 						</div>
 					</div>
-					<center><input type="submit" class="btn btn-primary" value="Track Now"></center>
+					<center><input type="submit" class="all-button btn btn-primary" value="Track Now"></center>
 				</form>
             </div>
 			<hr>

@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+@include('sweetalert::alert')
 
         <div class="container border">
             <center>
@@ -73,7 +74,7 @@
                                 <a href="{{ route('edit-record',$record->id) }}" class="text-primary" style="font-size:1.5em !important;" role="button" title="Edit">
                                     <i class="fa-solid fa-pen-nib"></i>
                                 </a>
-                                <a href="{{ route('remove-record',$record->id) }}" class="text-danger" style="font-size:1.5em !important;" role="button" title="Delete">
+                                <a href="#" class="delete text-danger" onclick="return delete_confirmed({{$record->id}})" role="button" title="Delete">
                                     <i class="fa-solid fa-ban"></i>
                                 </a>
                             </td>
@@ -98,10 +99,45 @@
                     @endif
             </div>
         </div>
+        
             <style>
                 .progress{
                     display: none;
                 }
             </style>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>  
+            <script>
+                function delete_confirmed($id){
+                    var id = $id;
+                    swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will be able to recover the items again!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $.ajax({
+                                url: '/remove-record',
+                                type: 'GET',
+                                data: { id : id },
+                                error: function() {
+                                    alert('Something is wrong');
+                                },
+                                success: function(data) {
+                                    swal("Poof! Data has been deleted successfully!", {
+                                    icon: "success",
+                                    }).then((result) =>{
+                                        window.setTimeout(function () {
+                                            window.location.href = "{{ route('home')}}";
+                                        }, 2000);
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            </script>
             
 @endsection

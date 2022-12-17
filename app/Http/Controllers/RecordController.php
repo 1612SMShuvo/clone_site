@@ -6,6 +6,7 @@ use App\Models\TrackApplication;
 use App\Models\Record;
 use Redirect;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RecordController extends Controller
 {
@@ -57,7 +58,7 @@ class RecordController extends Controller
             'name'   => 'Name Is Required',
             'tracking_id'   => 'Tracking ID Is Required, Should Be Unique',
             'dob'   => 'Date of Birth Is Required',
-            'progress'   => 'Progress Is Required',
+            'progress'   => 'Progress Is Required,  Number Type',
             'birth_place'   => 'Birth Place Is Required',
             'birth_id'   => 'Birth ID Is Required, Should Be Unique, Number Type',
             'passport_no'   => 'Passport No. Is Required',
@@ -161,9 +162,9 @@ class RecordController extends Controller
      * @param  \App\Models\TrackApplication  $trackApplication
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $record = Record::where('id',$id)->delete();
+        $record = Record::where('id',$request->id)->delete();
         return Redirect::back()->with('message','Record Deleted Successfully...!!!');
     }
 }
