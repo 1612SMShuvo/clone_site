@@ -100,7 +100,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					@if(!empty($record))
+					@if(empty($record) && $count < 1)
+					<tr></tr>
+					<tr></tr>
+					@elseif(!empty($record))
 					@php $i=1; @endphp
 					<tr>
 						<td>{{ $i++ }}</td>
@@ -135,8 +138,6 @@
 			</div>
 		</footer>
 		<script type="text/javascript">
-
-
 			$(".btn-refresh").click(function(){
 			  $.ajax({
 				 type:'GET',
@@ -146,8 +147,6 @@
 				 }
 			  });
 			});
-			
-			
 			</script>
     </body>
 </html>

@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/track-application',function () {
-    return view('track.form');
+    $count = "";
+    $record = "";
+    return view('track.form',compact('count','record'));
 });
 
 Auth::routes(['register' => false]);

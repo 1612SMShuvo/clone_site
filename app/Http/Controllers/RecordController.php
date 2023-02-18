@@ -108,7 +108,8 @@ class RecordController extends Controller
             'CaptchaCode' => 'required|valid_captcha'
         ]);
         $record = Record::where('dob',$request->dob)->where('tracking_id',$request->tracking_id)->first();
-        return view('track.form',compact('record'));
+        $count = Record::where('dob',$request->dob)->where('tracking_id',$request->tracking_id)->count();
+        return view('track.form',compact('record','count'));
     }
 
     /**
