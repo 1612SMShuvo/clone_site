@@ -51,22 +51,22 @@
 								<div class="col-6">
 									<input class="form-control" type="date" name="dob" id="pass" placeholder="Enter Your Birth Date" required="required">
 								</div>
-								{{-- <div class="col-6">
+								<div class="col-6">
+									<label class="col-md-4 control-label">Captcha</label>
+								</div>
+								<div class="col-6">
 									<div class="form-group{{ $errors->has('CaptchaCode') ? ' has-error' : '' }}">
-										<label class="col-md-4 control-label">Captcha</label>
-										<div class="col-md-6">
+										<input class="form-control" type="text" id="CaptchaCode" name="CaptchaCode">
+										@if ($errors->has('CaptchaCode'))
+											<span class="help-block" style="height: 100px; width:200px;">
+												<strong>{{ $errors->first('CaptchaCode') }}</strong>
+											</span>
+										@endif
+										<div class="col-md-6 mt-4">
 											{!! captcha_image_html('ContactCaptcha') !!}
-											<input class="form-control" type="text" id="CaptchaCode" name="CaptchaCode" style="margin-top:5px;">
-
-
-											@if ($errors->has('CaptchaCode'))
-												<span class="help-block">
-													<strong>{{ $errors->first('CaptchaCode') }}</strong>
-												</span>
-											@endif
 										</div>
 									</div>
-								</div> --}}
+								</div>
 							</div>
 						</div>
 						<div class="col-4"></div>
